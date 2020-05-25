@@ -14,7 +14,7 @@ export class ProductService {
   }
 
   getAllProducts(limitOfResults=10): Observable<serverResponse> {
-    return this.http.get<serverResponse>(this.url + 'products', {
+    return this.http.get<serverResponse>(this.url + '/products', {
       params: {
         limit: limitOfResults.toString()
       }
@@ -22,7 +22,7 @@ export class ProductService {
   }
 
   getSingleProduct(id: Number): Observable<ProductModelServer> {
-    return this.http.get<ProductModelServer>(this.url + 'products/' + id);
+    return this.http.get<ProductModelServer>(this.url + '/products/' + id);
   }
 
   getProductsFromCategory(catName: String): Observable<ProductModelServer[]> {
