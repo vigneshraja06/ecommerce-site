@@ -475,12 +475,12 @@ textarea.input {
 }
 
 .header-search form .input {
-  width: calc(100% - 260px);
+  width: calc(100% - 100px);
   margin-right: -4px;
 }
 
 .header-search form .search-btn {
-  height: 40px;
+  height: 41px;
   width: 100px;
   background: #D10024;
   color: #FFF;
@@ -622,7 +622,7 @@ textarea.input {
 #navigation {
   background: #FFF;
   border-bottom: 2px solid #E4E7ED;
-  border-top: 3px solid #D10024;
+  /*border-top: 3px solid #D10024;*/
 }
 
 /*----------------------------*\
@@ -2187,4 +2187,12 @@ textarea.input {
     float: none;
     margin-top: 10px;
   }
+}
+
+/*Custom Css*/
+
+#product-main-img:hover .product-preview>img {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
