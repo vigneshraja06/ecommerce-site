@@ -14,6 +14,26 @@ import { ThankyouComponent } from './components/thankyou/thankyou.component';
 import {HttpClientModule} from "@angular/common/http";
 import {NgxSpinnerModule} from "ngx-spinner";
 import {ToastrModule} from "ngx-toastr";
+import { LoginComponent } from './components/login/login.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import {FormsModule} from "@angular/forms";
+import {AuthServiceConfig, GoogleLoginProvider, SocialLoginModule} from "angularx-social-login";
+
+
+let config = new AuthServiceConfig([
+  {
+    id: GoogleLoginProvider.PROVIDER_ID,
+    provider: new GoogleLoginProvider("799705726167-vn6184fsovmps0kpbg5c7jabv15r3ias.apps.googleusercontent.com")
+  }
+  // {
+  //   id: FacebookLoginProvider.PROVIDER_ID,
+  //   provider: new FacebookLoginProvider("Facebook-App-Id")
+  // }
+]);
+
+export function provideConfig() {
+  return config;
+}
 
 @NgModule({
   declarations: [
@@ -24,7 +44,9 @@ import {ToastrModule} from "ngx-toastr";
     CheckoutComponent,
     HomeComponent,
     ProductComponent,
-    ThankyouComponent
+    ThankyouComponent,
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +55,16 @@ import {ToastrModule} from "ngx-toastr";
     AppRoutingModule,
     HttpClientModule,
     NgxSpinnerModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    FormsModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AuthServiceConfig,
+      useFactory: provideConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
