@@ -412,7 +412,7 @@ textarea.input {
 
 #top-header {
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   background-color: #1E1F29;
 }
 
@@ -724,7 +724,7 @@ textarea.input {
   top: 0;
   bottom: 0;
   left: 0px;
-  width: 60%;
+  width: 35%;
   background: #D10024;
   opacity: 0.9;
   -webkit-transform: skewX(-45deg);
@@ -768,11 +768,15 @@ textarea.input {
   position: absolute;
   top: 0;
   width: 75%;
-  padding: 30px;
+  padding: 15px;
   z-index: 10;
 }
 
 .shop .shop-body h3 {
+  color: #FFF;
+}
+
+.shop .shop-body h4 {
   color: #FFF;
 }
 
