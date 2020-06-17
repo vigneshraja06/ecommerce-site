@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {
+  BrowserAnimationsModule,
+  NoopAnimationsModule,
+} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -11,20 +14,26 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { HomeComponent } from './components/home/home.component';
 import { ProductComponent } from './components/product/product.component';
 import { ThankyouComponent } from './components/thankyou/thankyou.component';
-import {HttpClientModule} from "@angular/common/http";
-import {NgxSpinnerModule} from "ngx-spinner";
-import {ToastrModule} from "ngx-toastr";
+import { HttpClientModule } from '@angular/common/http';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import {FormsModule} from "@angular/forms";
-import {AuthServiceConfig, GoogleLoginProvider, SocialLoginModule} from "angularx-social-login";
-
+import { FormsModule } from '@angular/forms';
+import {
+  AuthServiceConfig,
+  GoogleLoginProvider,
+  SocialLoginModule,
+} from 'angularx-social-login';
+import { CategoryComponent } from './components/category/category.component';
 
 let config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider("799705726167-vn6184fsovmps0kpbg5c7jabv15r3ias.apps.googleusercontent.com")
-  }
+    provider: new GoogleLoginProvider(
+      '275384907863-2p2qv5nk79086lnkn076rljabsipjr8q.apps.googleusercontent.com'
+    ),
+  },
   // {
   //   id: FacebookLoginProvider.PROVIDER_ID,
   //   provider: new FacebookLoginProvider("Facebook-App-Id")
@@ -46,7 +55,8 @@ export function provideConfig() {
     ProductComponent,
     ThankyouComponent,
     LoginComponent,
-    ProfileComponent
+    ProfileComponent,
+    CategoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,14 +67,14 @@ export function provideConfig() {
     NgxSpinnerModule,
     ToastrModule.forRoot(),
     FormsModule,
-    SocialLoginModule
+    SocialLoginModule,
   ],
   providers: [
     {
       provide: AuthServiceConfig,
-      useFactory: provideConfig
-    }
+      useFactory: provideConfig,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
